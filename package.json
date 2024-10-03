@@ -1,0 +1,31 @@
+{
+  "name": "cy-vs-pw-example-todomvc",
+  "version": "1.0.0",
+  "description": "Cypress vs Playwright TodoMVC example app",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --static . --watch data.json --middlewares ./node_modules/json-server-reset",
+    "reset": "node reset-db.js",
+    "test:pw": "playwright test",
+    "test:cy": "cypress run",
+    "cy:open": "cypress open",
+    "e2e": "start-test http://localhost:3000 test:cy",
+    "open:pw": "playwright test --ui",
+    "open:cy": "start-test start http://localhost:3000 cy:open"
+  },
+  "keywords": [],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "0.17.4",
+    "json-server-reset": "1.6.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^20.8.10",
+    "cypress": "^13.15.0",
+    "cypress-real-events": "^1.11.0",
+    "prettier": "^3.0.3",
+    "start-server-and-test": "^2.0.2"
+  }
+}
