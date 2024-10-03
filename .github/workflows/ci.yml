@@ -1,0 +1,12 @@
+name: cypress tests
+on: push
+jobs:
+  e2e:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: get the code
+        uses: actions/checkout@v4
+      - name: run tests
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
